@@ -5,11 +5,13 @@ let t = 'Hello';
 
 // console.log(a);
 
-// let inputIn = document.querySelector('.input-in'); // input
-// let inputInTwo = document.querySelector('.input-in-two');
+let names = document.querySelector('.name'); // input
+let secondName = document.querySelector('.second-name');
+let year = document.querySelector('.year');
+let major = document.querySelector('.major');
 let button = document.querySelector('button'); // button
 let div = document.querySelector('.out');
-let inputIn = document.getElementsByClassName('.input-in').value = 'Hello';
+// let inputIn = document.getElementsByClassName('.input-in').value = 'Hello';
 
 // button.onclick = function () {
 //     // кнопка будет нажата
@@ -21,18 +23,29 @@ let inputIn = document.getElementsByClassName('.input-in').value = 'Hello';
 //     inputIn.value = '';
 // }
 
-button.addEventListener = ('click', () => {
+// button.onclick = () => (div.innerHTML = +inputIn.value + +inputInTwo.value)
+button.onclick = function () {
     console.log('work');
-    // let b = +inputIn.value;
+    // inputIn.style.border = '2px solid red'
+
+    let a = names.value;
+    let b = secondName.value;
+    let c = year.value;
+    let d = major.value;
+
+    // console.log(st * Math.PI);
     // let a = +inputInTwo.value;
     // console.log(a + b)
-    // div.innerHTML = a + b;
-    inputIn.value = 'hello';
+    div.innerHTML = `Уважаемый ${a}, ${b} ваш возраст ${c} род занятий ${d}`;
+    // inputIn.value = 'hello';
     // inputIn.setAttribute('value', inputIn.value);
-    console.log(inputIn.value)
-    // inputInTwo.value = '';
+    // console.log(inputIn.value)
+    names.value = '';
+    secondName.value = '';
+    year.value = '';
+    major.value = '';
 
-})
+}
 
 
 
