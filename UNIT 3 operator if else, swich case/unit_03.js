@@ -5,42 +5,66 @@ let i1 = document.querySelector('.i-1');
 let out1 = document.querySelector('.out-1')
 
 
-out1.innerHTML = f1;
+// out1.innerHTML = f1;
 b1.onclick = function () {
-    function f1(){
-        let a = i1.value;
+    console.log('WORK')
+    const a = +i1.value
         if (a === 4) {
-            return true
+            console.log('верно')
         } else {
-            return false
+            console.log('неверно')
         }
-    }
-    f1()
+    // function f1(){
+    //     let a = i1.value;
+    //     if (a === 4) {
+    //         return true
+    //     } else {
+    //         return false
+    //     }
+    // }
+    // f1()
 }
 
 
-document.querySelector('.b-1').onclick = f1;
+// document.querySelector('.b-1').onclick = f1;
 
 
 // Task 2
 // Даны две переменные a21 и a22. При нажатии кнопки b-2, запускается функция f2. Функция должна сравнить переменные с помощью if else и вывести в out-2 число, которое больше. Вариант равенства переменных не рассматриваем.
 
-let a21 = 45;
+let a21 = 25;
 let a22 = 32;
+let out2 = document.querySelector('.out-2')
+let b2 = document.querySelector('.b-2');
 
-function f2(){
-
+b2.onclick = function () {
+    console.log('work')
+    if (a21 > a22) {
+        out2.innerHTML = a21;
+    } else {
+        out2.innerHTML = a22;
+    }
 }
 
-document.querySelector('.b-2').onclick = f2;
+// document.querySelector('.b-2').onclick = f2;
 
 
 // Task 3
 // Даны 2 input - i-31 и i-32, оба - input[type=number]. При нажатии кнопки b-3 срабатывает функция f3. Функция должна вычитать содержимое i-31 и i-32 в переменные и сравнить их, вывести в  out-3 большее число.
 //     Проведите самостоятельный тест работы, введите пары чисел 4 и 9, 9 и 22, 5 и 111.
 
-function f3(){
+let i31 = document.querySelector('.i-31');
+let i32 = document.querySelector('.i-32');
+let out3 = document.querySelector('.out-3');
 
+function f3(){
+    let a = i31.value
+    let b = i32.value
+    if (a > b) {
+        out3.innerHTML = a;
+    } else {
+        out3.innerHTML = b;
+    }
 }
 
 document.querySelector('.b-3').onclick = f3;
@@ -48,16 +72,32 @@ document.querySelector('.b-3').onclick = f3;
 
 // Task 4. Создайте на странице input[type=number] с классом i-4, куда пользователь может ввести год своего рождения. Есть кнопка b-4 которая запускает функцию f4. Функция должна вывести в  .out-4 число 1 если пользователю больше или равно 18 лет, и 0 если меньше.
 
-function f4(){
+let i4 = document.querySelector('.i-4');
+let out4 = document.querySelector('.out-4');
 
+function f4(){
+    let a = i4.value
+    if (a >= 18) {
+        out4.innerHTML = 1;
+    } else {
+        out4.innerHTML = 0;
+    }
 }
 
 document.querySelector('.b-4').onclick = f4;
 
 // Task 5. Создайте на странице input[type=number] с классом i-5, куда пользователь может ввести число. Есть кнопка b-5 которая запускает функцию f5. Функция должна вывести в  .out-5 символ m если число меньше нуля, 0 если число равно нулю и 1 если больше.
 
-function f5(){
+let i5 = document.querySelector('.i-5');
+let out5 = document.querySelector('.out-5');
 
+function f5(){
+    let a = i5.value
+    if (a >= 0) {
+        out5.innerHTML = 'm';
+    } else {
+        out5.innerHTML = 1;
+    }
 }
 
 document.querySelector('.b-5').onclick = f5;
@@ -65,8 +105,16 @@ document.querySelector('.b-5').onclick = f5;
 
 // Task 6. Создайте на странице input[type=number] с классом i-6, куда пользователь может ввести число. Есть кнопка b-6 которая запускает функцию f6. Функция должна вывести в  .out-6  слово even если число четное и odd если нечетное. Для проверки четности используется целочисленный остаток от деления на 2 (оператор %). Если остаток равен нулю  - четное, нет - нечетное.
 
-function f6(){
+let i6 = document.querySelector('.i-6');
+let out6 = document.querySelector('.out-6');
 
+function f6(){
+    let a = i6.value;
+    if (a % 2 === 0) {
+        out6.innerHTML = 'even';
+    } else {
+        out6.innerHTML = 'odd';
+    }
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -74,8 +122,15 @@ document.querySelector('.b-6').onclick = f6;
 // Task 7.
 // Даны 2 input - i-71 и i-72, оба - input[type=number]. При нажатии кнопки b-7 срабатывает функция f7. Функция должна число из i-71 возвести в степень i-72, вывести результат в  out-7. Для возведения в степень можно использовать **, или Math.pow.
 
-function f7(){
+let i71 = document.querySelector('.i-71');
+let i72 = document.querySelector('.i-72');
+let out7 = document.querySelector('.out-7');
 
+
+function f7(){
+    let a = i71.value;
+    let b = i72.value;
+    out7.innerHTML = a ** b;
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -83,8 +138,23 @@ document.querySelector('.b-7').onclick = f7;
 // Task 8.
 // Дан select s-8, который содержит 3 значения: 1, 2, 3. Дана кнопка b-8. При ее  нажатии срабатывает функция f8. Функция должна получить выбранное в select число, потом с помощью switch case сравнить его поочередно с ‘1’, ‘2’, ‘3’. И если число выбрано - 1, то вывести в out-8 строку one, если 2 - two, если 3 - three.
 
-function f8(){
+let out8 = document.querySelector('.out-8');
+let s8 = document.querySelectorAll('.s-8');
 
+
+function f8(){
+    let a = s8.value;
+    switch (a) {
+        case (1):
+        out8.innerHTML = 'one';
+        break;
+        case (2):
+        out8.innerHTML = 'two';
+        break;
+        case (3): 
+        out8.innerHTML = 'three'
+        break;
+    }
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -96,8 +166,20 @@ document.querySelector('.b-8').onclick = f8;
 //     если от 44 до 64 - то 3.
 //     В противном случае, вывести 0.
 
-function f9(){
+let i9 = document.querySelector('.i-9');
+let out9 = document.querySelector('.out-9');
 
+function f9(){
+    let a = i9.value;
+    if (a > 1 && a < 32) {
+        out9.innerHTML = 1;
+    } else if (a > 33 && a < 43) {
+        out9.innerHTML = 2;
+    } else if (a > 44 && a < 64) {
+        out9.innerHTML = 3;
+    } else 
+    out9.innerHTML = 0;
+    
 }
 
 document.querySelector('.b-9').onclick = f9;
@@ -135,10 +217,15 @@ document.querySelector('.b-12').onclick = f12;
 
 // Task 13
 // Дан input i-130. В отличие от предыдущего задания - input type number. По нажатию кнопки получите значение из input  в переменную, а затем выведите в out-13 typeof полученной переменной. Typeof позволяет определить тип данных. Если вы правильно все сделали - то удивительно, но тип данных будет string! Подумайте почему так?
+let i130 = document.querySelector('.i-130');
 
 function f13(){
-
+    let v = i130.value;
+    document.querySelector('.out-13').innerHTML = (typeof v);
 }
+
+// Значения всех полей формы, это строки. Тип поля к его значению не имеет отношения, он указывает 
+// браузеру какое поле нужно отобразить. Если браузер не поддерживает тип number, то отобразит поле типа text.
 
 document.querySelector('.b-13').onclick = f13;
 
